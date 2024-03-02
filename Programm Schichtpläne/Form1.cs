@@ -54,13 +54,13 @@ namespace Programm_Schichtpläne
             
             if ((t == "Di") || (t == "Mi") || (t == "Do") || (t == "Fr"))
             {
-                pfad = @"L:\\operator\\SCHICHT\\1.    Frühschicht\\2.    Frühschicht Dienstag - Freitag.xlsx";
+                pfad = @"ihrpfad";
                 druck(pfad);
                 pfad = "";
             }
             else if (t == "Mo")
             {
-                pfad = @"L:\\operator\\SCHICHT\\1.    Frühschicht\\1.    Frühschicht Montag.xlsx";
+                pfad = @"ihrpfad";
                 druck(pfad);
                 pfad = "";
             }
@@ -68,11 +68,11 @@ namespace Programm_Schichtpläne
             {
                 if (radioButton1.Checked == true)
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\1.    Frühschicht\\4.    Frühschicht Samstag Kommi.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                 }
-                pfad = @"L:\\operator\\SCHICHT\\1.    Frühschicht\\3.    Frühschicht Samstag.xlsx";
+                pfad = @"ihrpfad";
                 druck(pfad);
                 pfad = "";
             }
@@ -92,7 +92,7 @@ namespace Programm_Schichtpläne
             {
                 if (t1 == "01")
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\1.    Erste Schicht im Monat.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                     abfragefrüMO(pfad);
@@ -106,13 +106,13 @@ namespace Programm_Schichtpläne
             {
                 if ((t == "Mo") || (t == "Di") || (t == "Mi") || (t == "Do") || (t == "Fr"))
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\2.    Spätschicht\\Spätschicht Montag - Freitag.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                 }
                 else if (t == "Sa")
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\2.    Spätschicht\\Spätschicht Samstag.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                 }
@@ -121,37 +121,37 @@ namespace Programm_Schichtpläne
             {
                 if ((t == "Mo") || (t == "Di") || (t == "Mi") || (t == "Do"))
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\3.    Nachtschicht\\2.    Nachtschicht Montag - Donnerstag.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                     if (date.Date == quarterEnd)
                     {
-                        pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
+                        pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
 
                     }
                     if (date.Date == letzterTagDesMonats)
                     {
-                        pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
+                        pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                     }
                 }
                 else if (t == "Fr")
                 {
-                    pfad = @"L:\\operator\\SCHICHT\\3.    Nachtschicht\\3.    Nachtschicht Freitag.xlsx";
+                    pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                     if (date.Date == quarterEnd)
                     {
-                        pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
+                        pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                     }
                     if (date.Date == letzterTagDesMonats)
                     {
-                        pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
+                        pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                     }
@@ -160,18 +160,18 @@ namespace Programm_Schichtpläne
                 {
                     if (radioButton1.Checked == true) // Nachtschicht Montag Feiertag
                     {
-                        pfad = @"L:\\operator\\SCHICHT\\3.    Nachtschicht\\4.    Nachtschicht Montag Feiertag Kommi.xlsx";
+                        pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                         if (date.Date == quarterEnd)
                         {
-                            pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
+                            pfad = @"ihrpfad";
                             druck(pfad);
                             pfad = "";
                         }
                         if (date.Date == letzterTagDesMonats)
                         {
-                            pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
+                            pfad = @"ihrpfad";
                             druck(pfad);
                             pfad = "";
                         }
@@ -180,7 +180,7 @@ namespace Programm_Schichtpläne
             }
             if (radioButton2.Checked == true)
             {
-                pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\5.    Feiertagsarbeit.xlsx";
+                pfad = @"ihrpfad";
                 druck(pfad);
                 pfad = "";
             }
