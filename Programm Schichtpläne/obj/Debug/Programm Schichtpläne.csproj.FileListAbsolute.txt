@@ -1,0 +1,10 @@
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm Schichtpläne.csproj.AssemblyReference.cache
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm_Schichtpläne.Form1.resources
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm_Schichtpläne.Properties.Resources.resources
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm Schichtpläne.csproj.GenerateResource.cache
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm Schichtpläne.csproj.CoreCompileInputs.cache
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\bin\Debug\Programm_Schichtplaene.exe.config
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\bin\Debug\Programm_Schichtplaene.exe
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\bin\Debug\Programm_Schichtplaene.pdb
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm_Schichtplaene.exe
+C:\Users\nassnode\source\repos\Programm Schichtpläne\Programm Schichtpläne\obj\Debug\Programm_Schichtplaene.pdb
