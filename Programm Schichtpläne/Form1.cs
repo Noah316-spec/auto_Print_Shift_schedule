@@ -18,8 +18,8 @@ namespace Programm_Schichtpläne
     {
         Timer timer = new Timer();
         public static DateTime Now { get; } // Uhrzeit holen
-        public string t = "";
-        public string t1 = "";
+        public string t = ""; //deklarien
+        public string t1 = ""; //deklarien
        
         public Form1()
         {
@@ -31,8 +31,8 @@ namespace Programm_Schichtpläne
         }
         public static DateTime GetQuarterEnd(DateTime date)
         {
-            int quarterNumber = (date.Month - 1) / 3+1;
-            return new DateTime(date.Year, quarterNumber * 3, DateTime.DaysInMonth(date.Year, quarterNumber * 3));
+            int quarterNumber = (date.Month - 1) / 3+1; // Quartalsende
+            return new DateTime(date.Year, quarterNumber * 3, DateTime.DaysInMonth(date.Year, quarterNumber * 3)); // return Quartalsende
         }
         public void druck(string pfad)
         {
@@ -189,40 +189,38 @@ namespace Programm_Schichtpläne
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            t = DateTime.Now.ToString("ddd");
-            t1= DateTime.Now.ToString("dd");
+            t = DateTime.Now.ToString("ddd"); //t = Wochentag abkürzung also bsp. "Sa"
+            t1= DateTime.Now.ToString("dd"); // t1 = ist der Tag also bsp. 28
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0)
+            if (comboBox1.SelectedIndex == 0) // Abfrage auswahl combobox
             {
                 if (t == "Sa")
                 {
-                    radioButton1.Visible = true;
+                    radioButton1.Visible = true; // wenn Samstag ist wird der radiobutton sichtbar 
                 }
-                radioButton1.Visible = false;
+                else
+                {
+                    radioButton1.Visible = false; // sonst nciht sichtbar
+                }
             }
             else if (comboBox1.SelectedIndex == 2)
             {
                 if (t == "Mo")
                 {
-                    radioButton1.Visible = true;
+                    radioButton1.Visible = true; // wenn montag ist wird Feiertag und kommi wird der radio button auch sichtbar
                 }
-                radioButton1.Visible = false;
+                {
+                    radioButton1.Visible = false; // sonst nicht sichtbar
+                }
             }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-           if(radioButton2.Checked == true)
-            {
-                radioButton1.Checked = false;
-            }
-            else
-            {
-                radioButton2.Checked = true;
-            }
+           
         }
 
       
