@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +18,8 @@ namespace Programm_Schichtpläne
     {
         Timer timer = new Timer();
         public static DateTime Now { get; } // Uhrzeit holen
-        public string t = ""; //deklarien
-        public string t1 = ""; //deklarien
+        public string t = "";
+        public string t1 = "";
        
         public Form1()
         {
@@ -31,8 +31,8 @@ namespace Programm_Schichtpläne
         }
         public static DateTime GetQuarterEnd(DateTime date)
         {
-            int quarterNumber = (date.Month - 1) / 3+1; // Quartalsende
-            return new DateTime(date.Year, quarterNumber * 3, DateTime.DaysInMonth(date.Year, quarterNumber * 3)); // return Quartalsende
+            int quarterNumber = (date.Month - 1) / 3+1;
+            return new DateTime(date.Year, quarterNumber * 3, DateTime.DaysInMonth(date.Year, quarterNumber * 3));
         }
         public void druck(string pfad)
         {
@@ -60,7 +60,7 @@ namespace Programm_Schichtpläne
             }
             else if (t == "Mo")
             {
-                pfad = @"ihrpfad";
+               pfad = @"ihrpfad";
                 druck(pfad);
                 pfad = "";
             }
@@ -112,7 +112,7 @@ namespace Programm_Schichtpläne
                 }
                 else if (t == "Sa")
                 {
-                    pfad = @"ihrpfad";
+                   pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
                 }
@@ -156,16 +156,37 @@ namespace Programm_Schichtpläne
                         pfad = "";
                     }
                 }
+                else if(t== "So")
+                {
+                    pfad = @"ihrpfad";
+                    druck(pfad);
+                    pfad = "";
+
+                    if (date.Date == quarterEnd)
+                    {
+                        pfad = @"ihrpfad";
+                        druck(pfad);
+                        pfad = "";
+
+                    }
+                    else if (date.Date == letzterTagDesMonats)
+                    {
+                       pfad = @"ihrpfad";
+                        druck(pfad);
+                        pfad = "";
+                    }
+                 
+                }
                 else if (t == "Mo")
                 {
-                    if (radioButton1.Checked == true) // Nachtschicht Montag Feiertag
+                    if (radioButton2.Checked == true) // Nachtschicht Montag Feiertag
                     {
                         pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                         if (date.Date == quarterEnd)
                         {
-                            pfad = @"ihrpfad";
+                           pfad = @"ihrpfad";
                             druck(pfad);
                             pfad = "";
                         }
@@ -189,38 +210,18 @@ namespace Programm_Schichtpläne
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            t = DateTime.Now.ToString("ddd"); //t = Wochentag abkürzung also bsp. "Sa"
-            t1= DateTime.Now.ToString("dd"); // t1 = ist der Tag also bsp. 28
+            t = DateTime.Now.ToString("ddd");
+            t1= DateTime.Now.ToString("dd");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0) // Abfrage auswahl combobox
-            {
-                if (t == "Sa")
-                {
-                    radioButton1.Visible = true; // wenn Samstag ist wird der radiobutton sichtbar 
-                }
-                else
-                {
-                    radioButton1.Visible = false; // sonst nciht sichtbar
-                }
-            }
-            else if (comboBox1.SelectedIndex == 2)
-            {
-                if (t == "Mo")
-                {
-                    radioButton1.Visible = true; // wenn montag ist wird Feiertag und kommi wird der radio button auch sichtbar
-                }
-                {
-                    radioButton1.Visible = false; // sonst nicht sichtbar
-                }
-            }
+           
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-           
+          
         }
 
       
