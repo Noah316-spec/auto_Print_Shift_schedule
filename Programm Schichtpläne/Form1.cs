@@ -88,6 +88,17 @@ namespace Programm_Schichtpläne
 
 
             string pfad = "";
+            if ((t1+ 1 == "31" && t == "Sa") && date.Date == quarterEnd.AddDays(-1))
+            {
+               // Wenn alle Bedingungen erfüllt sind, führen Sie die folgenden Aktionen aus
+               pfad = @"ihrPfad";
+               druck(pfad);
+               pfad = "";
+                 
+               pfad = @"ihrPfad";
+               druck(pfad);
+               pfad = "";
+            }
             if (comboBox1.SelectedIndex == 0)
             {
                 if (t1 == "01")
