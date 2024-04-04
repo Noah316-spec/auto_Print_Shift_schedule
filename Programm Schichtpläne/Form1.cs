@@ -88,30 +88,32 @@ namespace Programm_Schichtpläne
 
 
             string pfad = "";
-            if ((t1+ 1 == "31" && t == "Sa") && date.Date == quarterEnd.AddDays(-1))
-            {
-               // Wenn alle Bedingungen erfüllt sind, führen Sie die folgenden Aktionen aus
-               pfad = @"ihrPfad";
-               druck(pfad);
-               pfad = "";
-                 
-               pfad = @"ihrPfad";
-               druck(pfad);
-               pfad = "";
-            }
+           
             if (comboBox1.SelectedIndex == 0)
             {
-                if (t1 == "01")
-                {
-                    pfad = @"ihrpfad";
-                    druck(pfad);
-                    pfad = "";
-                    abfragefrüMO(pfad);
-                }
-                else
-                {
-                    abfragefrüMO(pfad);
-                }
+                 if (t1 == "01")
+                 {
+                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\1.    Erste Schicht im Monat.xlsx";
+                     druck(pfad);
+                     pfad = "";
+                     abfragefrüMO(pfad);
+                 }
+                 // Überprüfen Sie, ob der aktuelle Tag der 30. ist, ob heute Samstag ist und ob das Quartalsende auf den nächsten Tag fällt
+                 else if ((Convert.ToInt16(t1) + 1).ToString() == "31" && t == "Sa" && date.Date == quarterEnd.AddDays(-1))
+                 {
+                     // Wenn alle Bedingungen erfüllt sind, führen Sie die folgenden Aktionen aus
+                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
+                     druck(pfad);
+                     pfad = "";
+               
+                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
+                     druck(pfad);
+                     pfad = "";
+                 }
+                 else
+                 {
+                     abfragefrüMO(pfad);
+                 }
             }
             else if (comboBox1.SelectedIndex == 1)
             {
