@@ -51,7 +51,7 @@ namespace Programm_Schichtpläne
         }
         public void abfragefrüMO(string pfad)
         {
-            
+            // Abfrage der frühschicht Montag 
             if ((t == "Di") || (t == "Mi") || (t == "Do") || (t == "Fr"))
             {
                 pfad = @"ihrpfad";
@@ -84,6 +84,7 @@ namespace Programm_Schichtpläne
             DateTime date = DateTime.Now; // Setzen Sie hier Ihr Datum
             DateTime quarterEnd = GetQuarterEnd(date);
 
+            //Datum letzter Tag des Monats
             DateTime letzterTagDesMonats = new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
 
 
@@ -117,6 +118,7 @@ namespace Programm_Schichtpläne
             }
             else if (comboBox1.SelectedIndex == 1)
             {
+            // Spätschicht abfrage
                 if ((t == "Mo") || (t == "Di") || (t == "Mi") || (t == "Do") || (t == "Fr"))
                 {
                     pfad = @"ihrpfad";
@@ -132,11 +134,13 @@ namespace Programm_Schichtpläne
             }
             else if (comboBox1.SelectedIndex == 2)
             {
+            // Abfrage Nachtschicht
                 if ((t == "Mo") || (t == "Di") || (t == "Mi") || (t == "Do"))
                 {
                     pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
+                    //Quartals Ende ABfrage 
                     if (date.Date == quarterEnd)
                     {
                         pfad = @"ihrpfad";
@@ -144,6 +148,7 @@ namespace Programm_Schichtpläne
                         pfad = "";
 
                     }
+                    // Letzter Tag des Monats (Nachtschicht)
                     if (date.Date == letzterTagDesMonats)
                     {
                         pfad = @"ihrpfad";
@@ -151,17 +156,20 @@ namespace Programm_Schichtpläne
                         pfad = "";
                     }
                 }
+                // Nachtschicht Freitag
                 else if (t == "Fr")
                 {
                     pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
+                    //Quartals Ende ABfrage 
                     if (date.Date == quarterEnd)
                     {
                         pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
                     }
+                    // Letzter Tag des Monats (Nachtschicht)
                     if (date.Date == letzterTagDesMonats)
                     {
                         pfad = @"ihrpfad";
@@ -169,12 +177,13 @@ namespace Programm_Schichtpläne
                         pfad = "";
                     }
                 }
+                // Nachtschicht Sonntag
                 else if(t== "So")
                 {
                     pfad = @"ihrpfad";
                     druck(pfad);
                     pfad = "";
-
+                  //Quartals Ende ABfrage 
                     if (date.Date == quarterEnd)
                     {
                         pfad = @"ihrpfad";
@@ -182,6 +191,7 @@ namespace Programm_Schichtpläne
                         pfad = "";
 
                     }
+                    // Letzter Tag des Monats (Nachtschicht)
                     else if (date.Date == letzterTagDesMonats)
                     {
                        pfad = @"ihrpfad";
@@ -190,19 +200,23 @@ namespace Programm_Schichtpläne
                     }
                  
                 }
+                // Nachtschicht Montag
                 else if (t == "Mo")
                 {
+                   // BUtton pressed Feiertag
                     if (radioButton2.Checked == true) // Nachtschicht Montag Feiertag
                     {
                         pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
+                        //Quartals Ende ABfrage 
                         if (date.Date == quarterEnd)
                         {
                            pfad = @"ihrpfad";
                             druck(pfad);
                             pfad = "";
                         }
+                        // Letzter Tag des Monats (Nachtschicht)
                         if (date.Date == letzterTagDesMonats)
                         {
                             pfad = @"ihrpfad";
@@ -212,6 +226,7 @@ namespace Programm_Schichtpläne
                     }
                 }
             }
+            // Feiertags abfrage
             if (radioButton2.Checked == true)
             {
                 pfad = @"ihrpfad";
@@ -223,6 +238,7 @@ namespace Programm_Schichtpläne
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+        // Timer werte als Datum zu bekommen t = ddd = Mo,Di,Mi, als zahl dann t1 = dd = 01,02,03 usw.
             t = DateTime.Now.ToString("ddd");
             t1= DateTime.Now.ToString("dd");
         }
