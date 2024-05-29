@@ -76,20 +76,14 @@ namespace Programm_Schichtpläne
                 druck(pfad);
                 pfad = "";
             }
-
-
         }
         private void btnDruck_Click(object sender, EventArgs e)
         {
             DateTime date = DateTime.Now; // Setzen Sie hier Ihr Datum
             DateTime quarterEnd = GetQuarterEnd(date);
-
             //Datum letzter Tag des Monats
             DateTime letzterTagDesMonats = new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
-
-
             string pfad = "";
-           
             if (comboBox1.SelectedIndex == 0)
             {
                  if (t1 == "01")
@@ -106,7 +100,6 @@ namespace Programm_Schichtpläne
                      pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
                      druck(pfad);
                      pfad = "";
-               
                      pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
                      druck(pfad);
                      pfad = "";
@@ -146,7 +139,6 @@ namespace Programm_Schichtpläne
                         pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
-
                     }
                     // Letzter Tag des Monats (Nachtschicht)
                     if (date.Date == letzterTagDesMonats)
@@ -189,7 +181,6 @@ namespace Programm_Schichtpläne
                         pfad = @"ihrpfad";
                         druck(pfad);
                         pfad = "";
-
                     }
                     // Letzter Tag des Monats (Nachtschicht)
                     else if (date.Date == letzterTagDesMonats)
@@ -198,8 +189,7 @@ namespace Programm_Schichtpläne
                         druck(pfad);
                         pfad = "";
                     }
-                 
-                }
+                 }
                 // Nachtschicht Montag
                 else if (t == "Mo")
                 {
