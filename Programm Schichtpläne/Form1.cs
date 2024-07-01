@@ -88,7 +88,7 @@ namespace Programm_Schichtpläne
             {
                  if (t1 == "01")
                  {
-                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\1.    Erste Schicht im Monat.xlsx";
+                     pfad = @"ihrpfad";
                      druck(pfad);
                      pfad = "";
                      abfragefrüMO(pfad);
@@ -97,10 +97,21 @@ namespace Programm_Schichtpläne
                  else if ((Convert.ToInt16(t1) + 1).ToString() == "31" && t == "Sa" && date.Date == quarterEnd.AddDays(-1))
                  {
                      // Wenn alle Bedingungen erfüllt sind, führen Sie die folgenden Aktionen aus
-                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\3.    Quartalsende.xlsx";
+                     pfad = @"ihrpfad";
                      druck(pfad);
                      pfad = "";
-                     pfad = @"L:\\operator\\SCHICHT\\4.    Sonstige\\2.    Letzte Schicht im Monat.xlsx";
+                     pfad = @"ihrpfad";
+                     druck(pfad);
+                     pfad = "";
+                 }
+                 // Überprüfen Sie, ob es der letzte Tag des Monats ist
+                 else if ((Convert.ToInt16(t1) + 1).ToString() == "31" && t == "Sa" && date.Date == quarterEnd.AddDays(-1))
+                 {
+                     // Wenn alle Bedingungen erfüllt sind, führen Sie die folgenden Aktionen aus
+                     pfad = @"ihrpfad";
+                     druck(pfad);
+                     pfad = "";
+                     pfad = @"ihrpfad";
                      druck(pfad);
                      pfad = "";
                  }
